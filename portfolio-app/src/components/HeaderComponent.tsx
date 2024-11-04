@@ -1,17 +1,22 @@
+import { IconHexagonLetterN } from '@tabler/icons-react';
+import SideBarComponent from './SideBarComponent';
+const links=["About","Work","Experience","Contact"]
+const navLinks=(col:Boolean)=>{ 
+  return links.map((link,index)=>{
+   return  <a className={`${col? 'flex flex-col items-center':''} text-textcolor text-lg font-mono hover:text-primary`} href={`#${link}`} target="_blank" ><span className="text-primary">0{index+1}. </span>{link}</a>
+  }) 
 
+}
 const HeaderComponent = () => {
   return (
-    <nav className="flex justify-between px-10 h-[15vh] items-center bg-bgcolor">
-      <h1 className="text-primary">Portfolio</h1>
-      <div className="flex gap-4">
-        <a className=" text-textcolor hover:text-primary"href="#about" target="_blank" >About</a>
-        <a className=" text-textcolor  hover:text-primary"href="#work" target="_blank" >Work</a>
-        <a className=" text-textcolor  hover:text-primary"href="#experience" target="_blank" >Experience</a>
-        <a className=" text-textcolor  hover:text-primary"href="#skills" target="_blank" >Skills</a>
-        <a className=" text-textcolor  hover:text-primary"href="#skills" target="_blank" >Contact Us </a>
-
+    <nav className="flex justify-between px-10 h-[18vh] items-center bg-bgcolor">
+      <IconHexagonLetterN stroke={1.4} size={60} color="#64FFDA"/>
+      <div className="md:flex gap-8 hidden">
+      {navLinks(false)}
       </div>
+    <SideBarComponent/> 
     </nav>
   );
 };
 export default HeaderComponent;
+export{navLinks}
