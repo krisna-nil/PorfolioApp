@@ -8,16 +8,15 @@ const About = () => {
     const [dots, setDots] = useState<any>(null)
     useEffect(() => {
         if (!dots) {
-            setDots(DOTS({
+            setDots(DOTS(
                 el:"#bg",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
-                minHeight: 400.00,
-                minWidth: 400.00,
+                minHeight: 400.
                 scale: 1.00,
                 scaleMobile: 1.00,
-                backgroundColor: 0xd0d66,
+                backgroundColor: 0x11739,
                 size: 4.20,
                 showLines: false,
                 spacing:20
@@ -28,7 +27,7 @@ return () => {
 }
     }, [])
 return (
-    <div className="flex" id="bg">
+    <div className="flex overflow-hidden h-[80vh]" id="bg">
         <div>
             <div>Hi, I am</div>
             <div>{Info.name}</div>
